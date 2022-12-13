@@ -1,0 +1,29 @@
+.audio {
+  background-color: #eee;
+  cursor: pointer;
+  &:hover {
+    transition: .3s;
+    background-color: #aaa;
+  }
+}
+
+main {
+  padding: 1rem;
+}
+
+.filler {
+  flex: 1;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating span {
+  width: 10rem;
+}
+
+.dense {
+  margin: 0 0.5rem;
+}

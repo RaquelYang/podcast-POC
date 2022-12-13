@@ -1,0 +1,54 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- audio 播放 -->
+<div *ngFor="let audio of audios; let idx" class="audio" (click)="changeVideoSource(audio)">
+  <span>{{ audio.title }}</span>
+</div>
+
+<plyr
+  style="display: block; width: 640px;"
+  plyrTitle="Audio"
+  plyrType="audio"
+  [plyrSources]="audioSources"
+  [plyrOptions]="options"
+  (plyrInit)="plyrInit($event)"
+  (plyrEnded)="plyrEnded($event)"
+></plyr>
+
+<button (click)="play()">Play</button>
+<button (click)="pause()">Pause</button>
+<button (click)="moveTo(15)">+15 secs</button>
+<button (click)="moveTo(-15)">-15 secs</button>
+
+<!-- 評分的 -->
+<!-- <br>
+	<ng-container *ngFor="let rating of ratings; index as i">
+		<div class="rating">
+			<span>
+        Rating {{rating.value}} of {{rating.max}}
+        <ng-container *ngIf="rating.disabled">
+          (disabled)
+        </ng-container>
+        <ng-container *ngIf="rating.dense">
+          (dense)
+        </ng-container>
+        <ng-container *ngIf="rating.readonly">
+          (readonly)
+        </ng-container>
+      </span>
+			<div [class.dense]="rating.dense">
+				<ngx-material-rating [color]="rating.color"
+					 [(ngModel)]="ratings[i].value" [max]="rating.max">
+				</ngx-material-rating>
+			</div>
+		</div>
+	</ng-container> -->
+
+
