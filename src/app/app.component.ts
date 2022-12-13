@@ -96,9 +96,9 @@ export class AppComponent {
       options: [0.5, 1, 1.25, 1.5, 2],
     },
     // 單曲重複播放
-    loop: {
-      active: true
-    }
+    // loop: {
+    //   active: true
+    // }
   }
 
   constructor(){
