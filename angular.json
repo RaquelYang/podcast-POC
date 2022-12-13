@@ -124,6 +124,9 @@
               "devServerTarget": "podcast-POC:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
