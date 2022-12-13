@@ -68,7 +68,8 @@ export class AppComponent {
           src: 'https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3',
         }
       ],
-      title: 'sample1'
+      title: 'sample1',
+      poster: 'https://pic.pikbest.com/00/35/54/22n888piCVck.jpg-0.jpg!bw340'
     },
     {
       type: 'audio',
@@ -77,7 +78,8 @@ export class AppComponent {
           src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
         }
       ],
-      title: 'sample2'
+      title: 'sample2',
+      poster: 'https://static.displate.com/392x280/displate/2022-06-12/7f267c4556475f8daecb0a25e3947e00_22a9dfb6a5596a7d4b06a2369198f352.jpg'
     },
     {
       type: 'audio',
@@ -86,7 +88,8 @@ export class AppComponent {
           src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
         }
       ],
-      title: 'sample3'
+      title: 'sample3',
+      poster: 'https://media.posterlounge.com/images/big/1870175.jpg'
     },
   ]
 
@@ -139,7 +142,6 @@ export class AppComponent {
     if (idx + 1 >= this.audios.length) {
       this.player.source = this.audios[0];
       this.player.stop();
-      return
     } else {
       this.player.source = this.audios[idx+1];
       this.player.play();
