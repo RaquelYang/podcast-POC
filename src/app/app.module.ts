@@ -12,11 +12,21 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import {MatSliderModule} from '@angular/material/slider';
+import {MatListModule} from '@angular/material/list';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AudioPlayerComponent } from './audio-player/audio-player.component';
+import { AudioPlayer2Component } from './audio-player2/audio-player2.component';
+import { AudioPlayer2Service } from './audio-player2/audio-player2.service';
+import { AudioPlayer3Component } from './audio-player3/audio-player3.component';
+import { AudioPlayer3Service } from './audio-player3/audio-player3.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AudioPlayerComponent,
+    AudioPlayer2Component,
+    AudioPlayer3Component
   ],
   imports: [
     BrowserModule,
@@ -28,10 +38,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     MatIconModule,
     MatToolbarModule,
     MatTooltipModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatListModule,
+    MatSliderModule
 
   ],
-  providers: [],
+  providers: [AudioPlayer2Service, AudioPlayer3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

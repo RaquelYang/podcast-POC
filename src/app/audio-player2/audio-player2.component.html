@@ -1,0 +1,59 @@
+<div class="container">
+
+  <audio id="audio" preload="none" tabindex="0" *ngFor="let audio of audioSources; let idx = index">
+    <source src="{{audio}}" [attr.data-track-number]="idx"  />
+  </audio>
+    <div class="player">
+
+    <div class="large-toggle-btn">
+      <i class="large-play-btn" (click)="playSound()"><span class="screen-reader-text">Large toggle button</span></i>
+    </div>
+    <!-- /.play-box -->
+
+    <div class="info-box">
+      <div class="track-info-box">
+        <div class="track-title-text"></div>
+        <div class="audio-time">
+          <span class="current-time">00:00</span> /
+          <span class="duration">00:00</span>
+        </div>
+      </div>
+      <!-- /.info-box -->
+
+      <div class="progress-box">
+        <div class="progress-cell">
+          <div class="progress">
+            <div class="progress-buffer"></div>
+            <div class="progress-indicator"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.progress-box -->
+
+    <div class="controls-box">
+      <i class="previous-track-btn disabled"><span class="screen-reader-text">Previous track button</span></i>
+      <i class="next-track-btn"><span class="screen-reader-text">Next track button</span></i>
+    </div>
+    <!-- /.controls-box -->
+
+  </div>
+  <!-- /.player -->
+
+  <div class="play-list">
+
+    <div class="play-list-row" [attr.data-track-row]="idx + 1" *ngFor="let list of playList; let idx = index">
+      <div class="small-toggle-btn">
+        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
+      </div>
+      <div class="track-number">
+        {{ idx + 1 }}
+      </div>
+      <div class="track-title">
+        <a class="playlist-track" (click)="selectedTrack($event, idx + 1)" href="#" data-play-track="1">{{ list }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+

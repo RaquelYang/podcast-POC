@@ -1,14 +1,12 @@
+<a routerLink="/audio-player">js-html5 audio-player</a>
 <br>
+<a routerLink="/audio-player2">angular audio-player2</a>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<a routerLink="/audio-player3">angular material audio-player3</a>
 <br>
 <!-- audio 播放 -->
-<div *ngFor="let audio of audios; let idx" class="audio" (click)="changeVideoSource(audio)">
+<div>正在播放 {{ currentTrackName }}</div>
+<div *ngFor="let audio of audios; let idx" class="audio playlist" (click)="changeVideoSource(audio)">
   <span>{{ audio.title }}</span>
 </div>
 
@@ -19,7 +17,7 @@
   [plyrSources]="audioSources"
   [plyrOptions]="options"
   (plyrInit)="plyrInit($event)"
-  (plyrEnded)="plyrEnded($event)"
+
 ></plyr>
 
 <button (click)="play()">Play</button>
@@ -50,5 +48,9 @@
 			</div>
 		</div>
 	</ng-container> -->
-
-
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<router-outlet></router-outlet>
